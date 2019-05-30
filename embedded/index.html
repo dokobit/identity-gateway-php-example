@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Dokobit Identity Gateway example</title>
+</head>
+<body>
+
+	<div id="Dokobit-identity-container"></div>
+
+	<script src="https://id-sandbox.dokobit.com/js/dokobit-integration.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$.post('/embedded/start.php?route=authentication_create', {'return_url': window.location.href.replace('embedded.html', 'success.php')}, function(data) {
+	    if (data.status === 'ok') {
+	        var identity = new DokobitIdentity({
+	            sessionToken: data.session_token,
+	            locale: 'en'
+	        }).init();
+	    }
+	});
+	</script>
+
+</body>
+</html>

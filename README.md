@@ -1,1 +1,1 @@
-# identity-gateway-php-example
+# Dokobit Identity Gateway php example
