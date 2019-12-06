@@ -20,7 +20,8 @@ function request(string $url, string $fields = '', int $isPost = 1)
 $fields = http_build_query([
     'return_url' => 'https://id-sandbox.dokobit.com/example/success.php',
 ]);
-$response = request('https://id-sandbox.dokobit.com/api/authentication/create?access_token=labadiena', $fields);
+$apiAccessToken = 'your_api_access_token';
+$response = request('https://id-sandbox.dokobit.com/api/authentication/create?access_token='.$apiAccessToken, $fields);
 header('Content-Type: application/json');
 header('Location: '.json_decode($response)->url);
 
